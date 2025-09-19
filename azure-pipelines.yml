@@ -1,0 +1,12 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+
+- template: ansible-runner-template.yml
+  parameters:
+    playbookPath: 'playbook6_copyfile.yml'
