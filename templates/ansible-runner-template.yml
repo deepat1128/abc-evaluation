@@ -1,0 +1,20 @@
+parameters:
+  - name: playbookPath
+    type: string
+    default: 'playbook.yml'
+
+steps:
+- task: Bash@3
+  displayName: 'Install Ansible'
+  inputs:
+    targetType: 'inline'
+    script: |
+      sudo apt-get update
+      sudo apt-get install -y ansible
+
+- task: Bash@3
+  displayName: 'Run Ansible Playbook: ${{ parameters.playbookPath }}'
+  inputs:
+    targetType: 'inline'
+    script: |
+      ansible-playbook ${{ parameters.playbookPath }}
