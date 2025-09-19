@@ -2,6 +2,9 @@ parameters:
   - name: playbookPath
     type: string
     default: 'playbook.yml'
+  - name: inventoryPath
+    type: string
+    default: 'inventory/hosts.ini'
 
 steps:
 - task: Bash@3
@@ -13,8 +16,9 @@ steps:
       sudo apt-get install -y ansible
 
 - task: Bash@3
-  displayName: 'Run Ansible Playbook: ${{ parameters.playbookPath }}'
+  displayName: 'Run Ansible Playbook'
   inputs:
     targetType: 'inline'
     script: |
-      ansible-playbook ${{ parameters.playbookPath }}
+      ansible-playbook ${{ parameters.playbookPath }} -i ${{ parameters.inventoryPath }}
+

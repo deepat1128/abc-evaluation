@@ -2,11 +2,13 @@ trigger:
 - main
 
 pool:
-  name: default  
+  name: default
 
 steps:
 - checkout: self
 
 - template: templates/ansible-runner-template.yml
   parameters:
-    playbookPath: playbooks/'playbook6_copyfile.yml'
+    playbookPath: playbooks/playbook6_copyfile.yml
+    inventoryPath: inventory/hosts.ini
+
