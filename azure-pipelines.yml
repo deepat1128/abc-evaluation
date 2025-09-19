@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: ansible1 
+  name: default  
 
 steps:
 - checkout: self
