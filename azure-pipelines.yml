@@ -7,6 +7,6 @@ pool:
 steps:
 - checkout: self
 
-- template: ansible-runner-template.yml
+- template: templates/ansible-runner-template.yml
   parameters:
-    playbookPath: 'playbook6_copyfile.yml'
+    playbookPath: playbooks/'playbook6_copyfile.yml'
