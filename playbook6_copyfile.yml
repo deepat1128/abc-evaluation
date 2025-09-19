@@ -6,7 +6,7 @@
     - name: To copy a file to host, with user, group and permissions
       ansible.builtin.copy:
         src: /home/deepa/devops/file2.txt
-        dest: /home/deepa/copy_module/file2.txt
+        dest: /home/azureuser/copy_module/file2.txt
         owner: rishi
         group: rishi
         mode: "0744"
